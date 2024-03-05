@@ -8,7 +8,7 @@ from game.bot_handler import BotHandler
 from game.logic.random import RandomLogic
 from game.util import *
 from game.logic.base import BaseLogic
-from game.logic.nearest import NearestLogic
+from game.logic.nearest_naive import NearestLogic
 init()
 BASE_URL = "http://localhost:3000/api"
 DEFAULT_BOARD_ID = 1
@@ -169,7 +169,6 @@ move_delay = board.minimum_delay_between_moves / 1000
 ###############################################################################
 while True:
     list_board = board_handler.list_boards()
-    print(board)
     # Find our info among the bots on the board
     board_bot = board.get_bot(bot)
     print(board_bot)
