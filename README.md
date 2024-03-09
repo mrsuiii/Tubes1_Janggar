@@ -1,8 +1,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# 💎 Etimo Diamonds 2
+# 💎 Etimo Diamonds Greedy bot
 
-Diamonds is a programming challenge. Program a bot and compete to get the highest score. For more information:
+Diamonds is a programming challenge. Program a bot and compete to get the highest score. our bot is use greedy algorithm to get as much as it can. the main logic is we use greedy by diamond and some handlepath.For more information:
 
 -   [Project Specification](https://docs.google.com/document/d/13cbmMVXviyu8eKQ6heqgDzt4JNNMeAZO/edit)
 -   [Get Started with Diamonds](https://docs.google.com/document/d/1L92Axb89yIkom0b24D350Z1QAr8rujvHof7-kXRAp7c/edit)
@@ -23,11 +23,11 @@ Diamonds is a programming challenge. Program a bot and compete to get the highes
     ```
 
 ## How to Run 💻
-
-1. To run one bot
-    open folder src
+firstly, open src folder
+1. To run one bot\n
+    
     ```
-    python main.py --logic Random --email=your_email@example.com --name=your_name --password=your_password --team etimo
+    python main.py --logic "logicpilihan" --email=your_email@example.com --name=your_name --password=your_password --team etimo
     ```
 
 2. To run multiple bots simultaneously
