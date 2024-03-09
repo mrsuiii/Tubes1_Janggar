@@ -6,6 +6,7 @@ from game.api import Api
 from game.board_handler import BoardHandler
 from game.bot_handler import BotHandler
 from game.logic.random import RandomLogic
+from game.logic.cintadamai import CintaDamai
 from game.util import *
 from game.logic.base import BaseLogic
 from game.logic.nearest_naive import NearestLogic
@@ -14,7 +15,8 @@ BASE_URL = "http://localhost:3000/api"
 DEFAULT_BOARD_ID = 1
 CONTROLLERS = {
     "Random": RandomLogic,
-    "Nearest": NearestLogic
+    "Nearest": NearestLogic,
+    "Damai": CintaDamai
 }
 
 ###############################################################################
