@@ -45,8 +45,8 @@ class Begal(BaseLogic):
                 list_base.append(i)
         nearest = 1000000
         nearest_base = None
-        if(len(list_base)==0):
-            return 1,0
+        if(len(list_base)==0 or list_base==None):
+            return self.selamatsampaitujuan(current_position,current_position)
         if(list_base):
             for base in list_base:
                 dx = abs(base.position.x - board_bot.position.x)

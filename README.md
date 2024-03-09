@@ -25,7 +25,7 @@ Diamonds is a programming challenge. Program a bot and compete to get the highes
 ## How to Run 💻
 
 1. To run one bot
-
+    open folder src
     ```
     python main.py --logic Random --email=your_email@example.com --name=your_name --password=your_password --team etimo
     ```

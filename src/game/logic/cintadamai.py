@@ -6,15 +6,12 @@ from game.models import GameObject, Board, Position
 
 class CintaDamai(BaseLogic):
     def __init__(self):
-        self.directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
         self.goal_position: Optional[Position] = None
-        self.current_direction = 0
         self.halang=[]
         
     def next_move(self, board_bot: GameObject, board: Board):
         current_position = board_bot.position
         # menghindari tabrakan, tombol, dan tp
-        my_time_left = board_bot.properties.milliseconds_left 
         self.halang=[]
         teleporter=[]
         for barang in board.game_objects:
