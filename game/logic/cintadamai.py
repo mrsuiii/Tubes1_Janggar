@@ -34,10 +34,10 @@ class CintaDamai(BaseLogic):
         self.goal_position: Optional[Position] = None
         basepath=self.determinetargetndistance(current_position,teleporter,props.base)
         # kalau base sangat dekat balik
-        if props.diamonds>0 and basepath[1]<4:
+        if props.diamonds>0 and basepath[1]<=2:
             self.goal_position=basepath[0]
         # Sisa Waktu beda tipis dengan perjalanan ke base dan masih memegang diamond. Kembali ke base
-        if props.diamonds>0 and (board_bot.properties.milliseconds_left/1000-basepath[1])<=7:
+        if props.diamonds>0 and (board_bot.properties.milliseconds_left/1000-basepath[1])<=6:
             self.goal_position=basepath[0]
         # diamond penuh pulang ke base
         if self.goal_position == None:
@@ -65,6 +65,11 @@ class CintaDamai(BaseLogic):
             curdia = self.determinetargetndistance(board_bot.position,teleporter,diamond.position)
             if(jarak>curdia[1]):
                 jarak = curdia[1]
+                target = curdia[0]
+                points = diamond.properties.points
+            # memprioritaskan diamond merah jika jaraknya tidak jauh
+            if(diamond.properties.points==2 and jarak>curdia[1]*0.75):
+                jarak = curdia[1]*0.75
                 target = curdia[0]
                 points = diamond.properties.points
         return target,jarak,points
