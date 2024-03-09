@@ -15,48 +15,7 @@ Clone
     ```
     npm install --global yarn
     ```
-2. Menyiapkan board permainan
-    Buka folder game
-    ```
-    cd src/game
-    ```
-    Install dependencies
-    ```
-    yarn
-    ```
-    Setup default environment variable (untuk windows)
-    ```
-    .\scripts\copy-env.bat
-    ```
-    Setup default environment variable (untuk linux)
-    ```
-    chmod +x ./scripts/copy-env.sh
-    ./scripts/copy-env.sh
-    ```
-    Setup local database (untuk windows)
-    ```
-    docker compose up -d database
-    ./scripts/setup-db-prisma.bat
-    ```
-    Setup local database (untuk linux)
-    ```
-    docker compose up -d database
-    chmod +x ./scripts/setup-db-prisma.sh
-    ./scripts/setup-db-prisma.sh
-    ```
-    Build
-    ```
-    npm run build
-    ```
-    Run
-    ```
-    npm run start
-    ```
-    Jika semua step sudah pernah dilakukan untuk menjalankan kembali server hanya perlu untuk melakukan run
-    ```
-    npm run start
-    ```
-3. Menjalankan bot
+2. Menjalankan bot
     Install python https://www.python.org/downloads/
     Buka folder bot
     ```
