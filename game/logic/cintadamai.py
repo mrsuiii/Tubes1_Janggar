@@ -18,11 +18,13 @@ class CintaDamai(BaseLogic):
         self.halang=[]
         teleporter=[]
         for barang in board.game_objects:
+            # bot dianggap halangan jika tidak bisa ditabrak
             if  barang.type == "BotGameObject" and (barang.position != current_position):
-                self.halang.append((barang.position.x+1,barang.position.y))
-                self.halang.append((barang.position.x,barang.position.y+1))
-                self.halang.append((barang.position.x-1,barang.position.y))
-                self.halang.append((barang.position.x,barang.position.y-1))
+                if(barang.properties.milliseconds_left and (barang.properties.milliseconds_left%1000-board_bot.properties.milliseconds_left%1000)>0):
+                    self.halang.append((barang.position.x+1,barang.position.y))
+                    self.halang.append((barang.position.x,barang.position.y+1))
+                    self.halang.append((barang.position.x-1,barang.position.y))
+                    self.halang.append((barang.position.x,barang.position.y-1))
             if barang.type == "DiamondButtonGameObject":
                 self.halang.append((barang.position.x, barang.position.y))
                 diabutton=barang.position
