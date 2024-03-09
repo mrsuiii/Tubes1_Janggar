@@ -15,8 +15,9 @@ class NearestLogic(BaseLogic):
         
     def next_move(self,board_bot : GameObject, board:Board):
         props = board_bot.properties
-              
+        base = props.base
         if board_bot.properties.diamonds >= 4:
+
             base  = props.base
             self.goal_position = base
         else:
@@ -24,8 +25,8 @@ class NearestLogic(BaseLogic):
             nearest_dist =100000
             best_dia = None
             for dia in board.diamonds:
-                x_len = abs(me.x-dia.position.x)
-                y_len = abs(me.y-dia.position.y)
+                x_len = abs(base.x-dia.position.x)
+                y_len = abs(base.x-dia.position.y)
                 dist = x_len + y_len
                 if best_dia == None:
                     best_dia = dia
