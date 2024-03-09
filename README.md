@@ -17,11 +17,11 @@ Clone
     ```
 2. Menjalankan bot
     Install python https://www.python.org/downloads/
+   
     Buka folder bot
     ```
     cd src/bot
     ```
-    (jika dari folder repository)
     install requiremnts bot
     ```
     pip install -r requirements.txt
