@@ -15,7 +15,8 @@ class Begal(BaseLogic):
 
     def next_move(self, board_bot: GameObject, board: Board) -> Tuple[int, int]:
         if board_bot.properties.diamonds >=4:
-            return self.selamatsampaitujuan(board_bot.position,board_bot.properties.base)
+            
+            return get_direction(board_bot.position.x,board_bot.position.y,board_bot.properties.base.x,board_bot.properties.base.y)
         current_position = board_bot.position
         # menghindari tabrakan, tombol, dan tp
         teleporter=[]
@@ -44,7 +45,8 @@ class Begal(BaseLogic):
                 list_base.append(i)
         nearest = 1000000
         nearest_base = None
-        
+        if(len(list_base)==0):
+            return 1,0
         if(list_base):
             for base in list_base:
                 dx = abs(base.position.x - board_bot.position.x)
@@ -71,8 +73,9 @@ class Begal(BaseLogic):
                 
                 return x,y
             else:
-                dx,dy = self.selamatsampaitujuan(board_bot.position,nearest_base.position)
-                return dx,dy
+                 x,y=   get_direction(board_bot.position.x,board_bot.position.y,nearest_base.position.x,nearest_base.position.y)
+                 return x,y
+                
             
         return 0,0
     def calculate_distbot(self,board_bot : GameObject,props: Properties,board : Board):
