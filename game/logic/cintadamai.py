@@ -14,6 +14,7 @@ class CintaDamai(BaseLogic):
     def next_move(self, board_bot: GameObject, board: Board):
         current_position = board_bot.position
         # menghindari tabrakan, tombol, dan tp
+        my_time_left = board_bot.properties.milliseconds_left 
         self.halang=[]
         teleporter=[]
         for barang in board.game_objects:

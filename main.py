@@ -7,8 +7,10 @@ from game.board_handler import BoardHandler
 from game.bot_handler import BotHandler
 from game.logic.random import RandomLogic
 from game.logic.cintadamai import CintaDamai
+from game.logic.begal import Begal
 from game.util import *
 from game.logic.base import BaseLogic
+
 from game.logic.nearest_naive import NearestLogic
 init()
 BASE_URL = "http://localhost:3000/api"
@@ -16,7 +18,9 @@ DEFAULT_BOARD_ID = 1
 CONTROLLERS = {
     "Random": RandomLogic,
     "Nearest": NearestLogic,
-    "Damai": CintaDamai
+    "Damai": CintaDamai,
+    "Begal":Begal
+
 }
 
 ###############################################################################
@@ -173,7 +177,7 @@ while True:
     list_board = board_handler.list_boards()
     # Find our info among the bots on the board
     board_bot = board.get_bot(bot)
-    print(board_bot)
+    print(board)
     
     if not board_bot:
         # Managed to get game over

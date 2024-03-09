@@ -6,18 +6,20 @@ from game.models import GameObject, Board, Position
 from ..util import get_direction
 from game.board_handler import BoardHandler
 from game.bot_handler import BotHandler
+
+
+#strategy yang sangat naive mencari diamond terdekat
 class NearestLogic(BaseLogic):
-    
+
     def __init__(self):
         self.directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
         self.goal_position: Optional[Position] = None
         self.current_direction = 0
-        
     def next_move(self,board_bot : GameObject, board:Board):
         props = board_bot.properties
         base = props.base
         if board_bot.properties.diamonds >= 4:
-
+            #jika diamond >=4 maka akan balik
             base  = props.base
             self.goal_position = base
         else:
